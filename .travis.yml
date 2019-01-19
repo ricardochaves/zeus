@@ -1,0 +1,37 @@
+language: python
+python:
+  - 3.5
+  - 3.6
+  - 3.7-dev
+services:
+  - mysql
+  - docker
+before_install:
+  - mysql -e 'CREATE DATABASE base_site;'
+install:
+  - pip install -r requirements_dev.txt
+script:
+  - coverage run --source='.' manage.py test
+after_success:
+  - coveralls
+  - docker build -t ricardobchaves6/base_site:latest .
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push ricardobchaves6/base_site:latest
+
+
+
+sudo: false
+language: python
+env:
+  - DJANGO_SETTINGS_MODULE=django_ogp.tests.settings
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+  - "3.7-dev"
+install: 
+  - pip install tox-travis
+  - pip install coveralls
+script: tox
+after_success:
+  - coveralls

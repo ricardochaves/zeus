@@ -1,0 +1,36 @@
+version: "3.5"
+services:
+  redis:
+    image: redis:latest
+  # db:
+  #   image: mysql
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: example
+  #     MYSQL_DATABASE: base_site
+  #   command: --default-authentication-plugin=mysql_native_password
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+      - "5005:5005"
+    env_file: .env
+    volumes:
+      - .:/base_site
+    depends_on:
+      - redis
+      - db
+    command:
+      [
+        "./wait-for-it.sh",
+        "redis:6379",
+        "-t",
+        "120",
+        "--",
+        "./wait-for-it.sh",
+        "db:3306",
+        "-t",
+        "120",
+        "--",
+        "./base_site.sh",
+      ]
