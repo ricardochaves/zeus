@@ -4,6 +4,6 @@ django-htmlmin==0.10.0
 django-image-cropping==1.2.0
 easy_thumbnails==2.5
 WhiteNoise==4.1.2
-django-redis
+django-redis==4.10.0
 django-ckeditor
 Pillow
