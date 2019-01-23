@@ -7,3 +7,4 @@ WhiteNoise==4.1.2
 django-redis
 django-ckeditor
 Pillow
+psycopg2

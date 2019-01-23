@@ -2,13 +2,8 @@ version: "3.5"
 services:
   redis:
     image: redis:latest
-  # db:
-  #   image: mysql
-  #   restart: always
-  #   environment:
-  #     MYSQL_ROOT_PASSWORD: example
-  #     MYSQL_DATABASE: base_site
-  #   command: --default-authentication-plugin=mysql_native_password
+  db:
+    image: postgres:10.1-alpine
   web:
     build: .
     ports:
@@ -16,7 +11,7 @@ services:
       - "5005:5005"
     env_file: .env
     volumes:
-      - .:/base_site
+      - .:/api
     depends_on:
       - redis
       - db
@@ -28,9 +23,9 @@ services:
         "120",
         "--",
         "./wait-for-it.sh",
-        "db:3306",
+        "db:5432",
         "-t",
         "120",
         "--",
-        "./base_site.sh",
+        "./start.sh",
       ]

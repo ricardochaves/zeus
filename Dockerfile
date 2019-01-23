@@ -1,11 +1,9 @@
 FROM python:3.7.1-stretch
 LABEL maintainer "ricardobchaves6@gmail.com"
 
-WORKDIR /base_site
+WORKDIR /api
 
-ADD . /base_site
+ADD . /api
 
-RUN chmod +x ./base_site.sh
-
-RUN pip install --upgrade pip==18.1 && \
+RUN pip install --upgrade pip==19 && \
     pip install -r requirements_dev.txt
