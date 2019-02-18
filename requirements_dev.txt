@@ -4,6 +4,6 @@ pylint==2.2.2
 autopep8==1.4.3
 coverage==4.5.2
 coveralls==1.6.0
-pre-commit==1.14.3
+pre-commit==1.14.4
 tox==3.7.0
 pytest==4.2.0
