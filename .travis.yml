@@ -1,5 +1,7 @@
 sudo: false
 language: python
+services:
+  - postgresql
 env:
   - DJANGO_SETTINGS_MODULE=django_ogp.tests.settings
 python:
