@@ -5,5 +5,5 @@ autopep8==1.4.3
 coverage==4.5.3
 coveralls==1.7.0
 pre-commit==1.15.1
-tox==3.7.0
+tox==3.8.6
 pytest==4.3.0
