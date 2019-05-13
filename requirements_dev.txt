@@ -6,4 +6,4 @@ coverage==4.5.3
 coveralls==1.7.0
 pre-commit==1.16.1
 tox==3.10.0
-pytest==4.3.0
+pytest==4.5.0
