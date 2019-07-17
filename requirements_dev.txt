@@ -1,9 +1,9 @@
 -r requirements.txt
-ptvsd==4.2.4
+ptvsd==4.2.10
 pylint==2.3.1
-autopep8==1.4.3
-coverage==4.5.2
-coveralls==1.6.0
-pre-commit==1.14.4
-tox==3.7.0
-pytest==4.3.0
+autopep8==1.4.4
+coverage==4.5.3
+coveralls==1.8.1
+pre-commit==1.17.0
+tox==3.13.1
+pytest==5.0.0
