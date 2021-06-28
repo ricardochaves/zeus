@@ -6,4 +6,4 @@ easy_thumbnails==2.7.1
 WhiteNoise==5.2.0
 django-redis==5.0.0
 django-ckeditor==6.1.0
-Pillow==6.0.0
+Pillow==8.2.0
