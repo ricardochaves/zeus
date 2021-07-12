@@ -1,7 +1,7 @@
 django==3.2.5
 gunicorn==20.1.0
 django-htmlmin==0.11.0
-django-image-cropping==1.2.0
+django-image-cropping==1.5.0
 easy_thumbnails==2.6
 WhiteNoise==4.1.2
 django-redis==4.10.0
