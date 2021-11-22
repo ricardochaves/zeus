@@ -1,4 +1,4 @@
-django==2.2.3
+django==3.2.9
 gunicorn==19.9.0
 django-htmlmin==0.11.0
 django-image-cropping==1.2.0
